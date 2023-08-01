@@ -1,20 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Accueil from './Accueil/Accueil.js';
+import React from 'react';
 
 function App() {
     return (
-       <div className="body">
-        <header className="header_index">
-        <nav className="navbar">
-            <h1 >Connectify</h1>
-            <div className="onglets">
-                <a href="#">Accueil</a>
-                <a href="#">Connexion</a>
-                <a href="#">Inscription</a>
-            </div>
-        </nav>
-        </header>
-       </div>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Accueil} />
+                {/* Ajoutez ici d'autres routes si nécessaire */}
+            </Switch>
+        </Router>
     );
 }
 
