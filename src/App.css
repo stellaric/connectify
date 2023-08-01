@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Chicle&family=Gravitas+One&family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Gravitas+One&family=Inter&display=swap');
 body{
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body{
   align-items: center;
 }
 
-.navbar h1{
+.navbar h1 , .navbar_deux h1{
   color: #DACA3B;
   font-family: 'Chicle', cursive;
 font-size: 50px;
@@ -140,7 +140,7 @@ font-weight: 400;
 line-height: normal;
 width: 80%;
 }
-
+/* section qsn */
 .qsn {
   background: #1D5A43;
   height: 960px;
@@ -149,7 +149,7 @@ width: 80%;
   flex-direction: row;
   justify-content: center;
 }
-
+/* section contact */
 .contact{
   background: #1D5A43;
   height: 960px;
@@ -159,6 +159,64 @@ width: 80%;
   justify-content: center;
 }
 
+.content_form{
+  width: 529px;
+height: 631px;
+border-radius: 20px;
+background: #1D5A43;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+color: white;
+}
+
+.content_form input[type="text"]{
+  width: 466px;
+height: 63px;
+border-radius: 10px;
+border: 1px;
+background: #D9D9D9;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.content_form textarea{
+  width: 466px;
+height: 186px;
+border-radius: 10px;
+background: #D9D9D9;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.content_form button {
+  width: 219px;
+height: 60px;
+align-self: center;
+border: 1px;
+  border-radius: 20px;
+  background: #DACA3B;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /*text*/
+  color: #FFF;
+font-family: Inter;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.label_email , .label_sujet,.label_message{
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.label_email label , .label_sujet label , .label_message label {
+  color: #FFF;
+font-family: Inter;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+/* section news */
 
 .news {
   background-color: #00000054;
@@ -218,7 +276,7 @@ height: 452px;
 
 .footer {
   background: #216249;
-  height: 196px;
+  height: 86px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,4 +290,18 @@ height: 452px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+/*_________vue connexion_____________*/
+.header_connexion{
+  height: 0;
+}
+
+.navbar_deux {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 80px;
+  position: sticky;
+  align-items: center;
 }

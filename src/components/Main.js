@@ -1,8 +1,8 @@
 import React from 'react';
-import '../accueil.css';
-import imgActualite from '../../media/img/fd_actualite.jpg'
-import imgQsn from '../../media/img/fd_qsn.jpg'
-import imgContact from '../../media/img/fd_contact.jpg'
+import '../App.css';
+import imgActualite from '../media/img/fd_actualite.jpg'
+import imgQsn from '../media/img/fd_qsn.jpg'
+import imgContact from '../media/img/fd_contact.jpg'
 
 export default function Main(){
     return(
@@ -47,7 +47,22 @@ Notre objectif est de créer un espace numérique où chacun peut se sentir libr
                 <div className="droite">
                     <h2>Nous Contacter</h2>
                    <form>
+        <div className="content_form">
+        <div className='label_email'>
+            <label name="email">Email:</label>
+            <input type="text" placeholder='Entrez votre email...'/>
+        </div>
+        <div className='label_sujet'>
+        <label name="sujet">Sujet:</label>
+            <input type="text" placeholder='Sujet de votre  message..'/>
+        </div>
+        <div className='label_message'>
+        <label name="message">Message:</label>
+            <textarea cols="30" rows="10"placeholder='Ecrivez votre  message..'></textarea>
+        </div>
 
+        <button type='submit'>Valider </button>
+        </div>
                    </form>
                    </div>
             </section>

@@ -4,7 +4,7 @@ import Main from './components/Main';
 import Footer from './components/Footer'
 import React from 'react';
 
-export default function Accueil() {
+export default function Inscription() {
     return (
        
         <>

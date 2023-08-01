@@ -1,10 +1,10 @@
 
 import Header from './components/Header';
 import Main from './components/Main';
-import Footer from './components/Footer'
+import Footer from '../components/Footer'
 import React from 'react';
 
- function App() {
+export default function Connexion() {
     return (
        
         <>
@@ -15,5 +15,5 @@ import React from 'react';
     );
 
 }
-export default App ;
+
  
