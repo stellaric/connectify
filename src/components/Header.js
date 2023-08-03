@@ -10,7 +10,7 @@ export default function Header() {
             <div className="onglets">
                 <Link to={'/'}>Accueil</Link>
                 <Link to={'connexion'}>Connexion</Link>
-                <Link to={'inscription'}>Inscription</Link>
+                <Link  className="btn_inscription "to={'inscription'}>Inscription</Link>
                
             </div>
         </nav>

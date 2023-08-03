@@ -9,9 +9,9 @@ export default function Header() {
         <nav className="navbar_deux">
             <h1 >Connectify</h1>
             <div className="onglets">
-              <span> <Link to={'/'}>Accueil</Link></span> 
-               <span><Link to={'../connexion'}>Connexion</Link></span> 
-                <Link to={'inscription'}>Inscription</Link>
+               <Link to={'/'}>Accueil</Link>
+               <Link to={'../connexion'}>Connexion</Link>
+                <Link className="btn_inscription" to={'../inscription'}>Inscription</Link>
                
             </div>
         </nav>

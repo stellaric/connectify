@@ -1,17 +1,50 @@
-import React from 'react';
+import React , { useState,useEffect} from 'react';
 import '../App.css';
 import imgActualite from '../media/img/fd_actualite.jpg'
 import imgQsn from '../media/img/fd_qsn.jpg'
 import imgContact from '../media/img/fd_contact.jpg'
 
+
+
 export default function Main(){
+    //fonction js
+    //fonction Bienvenue 
+    const translations = {
+        fr: "Bienvenue",
+        en: "Welcome",
+        es: "Bienvenido",
+        de: "Willkommen",
+        // Ajoutez autant de langues que nécessaire
+      };
+      
+        const [currentLanguage, setCurrentLanguage] = useState("fr");
+      
+        useEffect(() => {
+          // Appel de la fonction toutes les 1 seconde
+          const interval = setInterval(changeLanguage, 1000);
+      
+          // Nettoyage du setInterval lorsque le composant est démonté
+          return () => clearInterval(interval);
+        }, [currentLanguage]);
+      
+        function changeLanguage() {
+          const languages = Object.keys(translations);
+          const nextIndex = (languages.indexOf(currentLanguage) + 1) % languages.length;
+          const nextLanguage = languages[nextIndex];
+          setCurrentLanguage(nextLanguage);
+        }
+    //fonction formulaire 
+
+//
+
+    
     return(
         <main>
 
  {/*section bienvenue*/}
             <section className='bienvenue'>
             
-                    <h1>Bienvenue</h1>  
+                    <h1>{translations[currentLanguage]}</h1>  
                     <p>"Harmonisez vos passions, partagez vos émotions avec Connectify !"</p>            
             </section>
             {/*section actualite*/}
@@ -46,7 +79,7 @@ Notre objectif est de créer un espace numérique où chacun peut se sentir libr
                     </div>
                 <div className="droite">
                     <h2>Nous Contacter</h2>
-                   <form>
+                   <form method="POST" >
         <div className="content_form">
         <div className='label_email'>
             <label name="email">Email:</label>

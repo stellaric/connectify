@@ -1,13 +1,19 @@
 import { useRouteError } from "react-router-dom";
+import imgErreur from '../media/img/erreur_page.gif'
+import '../App.css';
 
 export default function ErrorPage() {
     const error = useRouteError()
     console.log(error)
+    console.log(error.error.message)
     return (
-        <div>
+
+
+        <div class="erreur_page">
             <h1>Page introuvable</h1>
-            <p>une erreur est survenue !</p>
-            <p>{error.error.message}</p>
+            <img src={imgErreur}/>
+            <p>Une erreur est survenue !</p>
+            
         </div>
     )
 }

@@ -10,8 +10,8 @@ export default function Header() {
             <h1 >Connectify</h1>
             <div className="onglets">
                 <Link to={'/'}>Accueil</Link>
-                <Link to={'connexion'}>Connexion</Link>
-                <Link to={'inscription'}>Inscription</Link>
+                <Link to={'../connexion'}>Connexion</Link>
+                <Link className="btn_inscription" to={'../inscription'}>Inscription</Link>
                
             </div>
         </nav>
