@@ -48,6 +48,7 @@ export default function Main(){
                     <h1>{translations[currentLanguage]}</h1>  
                     <p>"Harmonisez vos passions, partagez vos émotions avec Connectify !"</p>            
             </section>
+
             {/*section actualite*/}
             <section className="actualite">
                 <div className="gauche">
@@ -60,6 +61,7 @@ export default function Main(){
                          Rejoignez-nous dès maintenant et commencez à créer des liens, à inspirer et à être inspiré. Connectify est là pour vous aider à rester connecté et à célébrer les moments de la vie, ensemble.</p>
                     </div>
             </section>
+            
                       {/*section qsn*/}
     <section className="qsn">
         <div className="gauche">
@@ -101,14 +103,17 @@ Notre objectif est de créer un espace numérique où chacun peut se sentir libr
                    </div>
             </section>
 
+
         {/*section news*/}
         <section class="news">
+
 <div className="content_news">
     <h2>Newsletter</h2>
     <p>Inscrivez-vous à notre newsletter pour rester informé(e) et connecté(e) avec Connectify !</p>
     <input type="text" placeholder='Entrez votre email...' />
     <button   type="submit">Valider</button>
 </div>
+
         </section>
         </main>
     );

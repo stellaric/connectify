@@ -12,7 +12,7 @@ export default function Header() {
                 <Link to={'/'}>Accueil</Link>
                 <Link to={'connexion'}>Connexion</Link>
                 <Link  className="btn_inscription" to={'inscription'}>Inscription</Link>
-               
+                
             </div>
         </nav>
 

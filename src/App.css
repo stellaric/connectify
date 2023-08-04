@@ -39,6 +39,14 @@ font-style: normal;
 line-height: normal;
 }
 
+.onglets a:hover {
+  color: #DACA3B;
+}
+a.btn_inscription:hover , a.btn_inscription:active{
+background-color: #DACA3B;
+color: white;
+}
+
 
 .btn_inscription{
   border-radius: 20px;
