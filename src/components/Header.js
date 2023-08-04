@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import '../appMobile.css'
 import video from '../media/video/fd_accueil.mp4'
 import { Link } from 'react-router-dom'
 export default function Header() {
@@ -10,7 +11,7 @@ export default function Header() {
             <div className="onglets">
                 <Link to={'/'}>Accueil</Link>
                 <Link to={'connexion'}>Connexion</Link>
-                <Link  className="btn_inscription "to={'inscription'}>Inscription</Link>
+                <Link  className="btn_inscription" to={'inscription'}>Inscription</Link>
                
             </div>
         </nav>

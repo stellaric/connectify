@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+import '../../appMobile.css'
 import { Link } from 'react-router-dom';
 
 import imgInscription from '../../media/img/fd_inscription.jpg'
@@ -10,7 +11,7 @@ export default function Main(){
 
 
         {/*section contact*/}
-        <section className="contact">
+        <section className="inscription">
                 <div className="gauche">
                     <img src={imgInscription} alt="img_inscription "/>
                     </div>
@@ -36,16 +37,13 @@ export default function Main(){
         </div>
         <div className="label_genre">
         <label name="genre">Genre:</label>
-            <div className='label_homme'>
-            
-            <input type="radio"  name="homme" value="male" />
+       
+            <input type="radio"  name="genre" value="male" id='male' />
             <span name="homme">Homme</span>
-            </div>
-
-            <div className='label_femme' >
-            <input type="radio"  name="femme"  value="female"  />
+    
+            <input type="radio"  name="genre"  value="female" id='female' />
             <span name="femme">Femme</span>
-            </div>
+           
         </div>
         <div className='label_mdp'>
         <label name="mdp">Mot de passe :</label>

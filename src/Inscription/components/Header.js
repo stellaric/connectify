@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+import '../../appMobile.css'
 
 import { Link } from 'react-router-dom';
 

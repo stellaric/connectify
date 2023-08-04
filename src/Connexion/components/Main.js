@@ -10,7 +10,7 @@ export default function Main(){
 
 
         {/*section contact*/}
-        <section className="contact">
+        <section className="connexion">
                 <div className="gauche">
                     <img src={imgConnexion} alt="img_connexion "/>
                     </div>
@@ -28,7 +28,7 @@ export default function Main(){
         </div>
       
 
-        <button type='submit'>Valider </button>
+        <button type='submit'>Se Connecter </button>
         </div>
                    </form>
 
