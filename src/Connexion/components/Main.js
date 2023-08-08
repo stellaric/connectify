@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import imgConnexion from '../../media/img/fd_connexion.jpg'
 
 export default function Main(){
+
+ 
     return(
         
         <main>
@@ -20,11 +22,11 @@ export default function Main(){
         <div className="content_form_connexion ">
         <div className='label_email'>
             <label name="email">Email:</label>
-            <input type="text" placeholder='Entrez votre email...'/>
+            <input type="text" placeholder='Entrez votre email...' />
         </div>
         <div className='label_mdp'>
         <label name="mdp">Mot de passe :</label>
-            <input type="password" placeholder='Entrez votre mot de passe ...'/>
+            <input type="password" placeholder='Entrez votre mot de passe ...' />
         </div>
       
 

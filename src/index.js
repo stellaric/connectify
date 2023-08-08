@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './Routes/ErrorPage';
 import Connexion from './Connexion/Connexion.js'
 import Inscription from './Inscription/Inscription'
+import Profil from './Profil/Profil'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "inscription",
     element:<Inscription/>
+  },
+  {
+    path:"profil",
+    element:<Profil/>
   }
 ])
 
