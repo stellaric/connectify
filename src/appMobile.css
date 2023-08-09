@@ -4,11 +4,39 @@
 .header_index {
     height: 790px;
 }
-.onglets {
+.onglets a {
     display: none;
 }
 .container h1 {
     font-size: 85px;
+}
+
+.burgerMenu{
+  font-size: 44px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  }
+
+.navbar ,.navbar_deux{
+    justify-content: center;
+}
+.navbar h1 ,.navbar_deux h1{
+    margin: 45px;}
+
+.overlay a {
+    font-size: 35px;
+    padding: 23px;
+
+}
+.overlay .closebtn {
+font-size: 40px;
+top: 0px;
+right: 35px;
+}
+
+.overlay h1 {
+        margin-top: -105px;
 }
 /*main*/
 /*section bienvenue*/

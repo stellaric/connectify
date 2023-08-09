@@ -19,7 +19,7 @@ body{
   align-items: center;
 }
 
-.navbar h1 , .navbar_deux h1{
+.navbar h1 , .navbar_deux h1,.overlay-content h1 ,.navbar_profil h1{
   color: #DACA3B;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: 'Chicle', cursive;
@@ -39,7 +39,7 @@ font-style: normal;
 line-height: normal;
 }
 
-.onglets a:hover {
+.onglets a:hover , .overlay-content a:hover {
   color: #DACA3B;
 }
 a.btn_inscription:hover , a.btn_inscription:active{
@@ -54,6 +54,54 @@ color: white;
   box-shadow: 1px 1px 4px #0000006b;
 }
 
+.burgerMenu{
+ 
+  color: white;
+   cursor: pointer;
+   display: none;
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #20835D;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  font-family: 'Inter',sans-serif;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  font-size: 46px;
+    top: 0px;
+    right: 35px;
+    font-weight: 700;
+}
 
 #background-video {
   height: 100vh;
@@ -412,3 +460,55 @@ height: 452px;
   object-fit: cover;
 }
 
+/*vue profil*/
+.navbar_profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#20835D;
+  height: 90px;
+}
+.header_profil {
+  height: 650px;
+  background:url('media/img/banner_profil.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banniere {
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card_profil{
+  background: rgb(190 186 186 / 42%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.125);
+  width: 1322px;
+  height: 386px;
+}
+.main_profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 960px;
+}
+.filtre {
+  width: 30%;
+  background: yellow;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.profil_content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#20835D;
+}

@@ -15,6 +15,18 @@ export default function Main(){
         en: "Welcome",
         es: "Bienvenido",
         de: "Willkommen",
+        gf: "ben vini",
+        ht: "Byenvini",
+        sen: "Akksil ak diam",
+        ukr: "дякую",
+        bgd: "স্বাগত",
+        zh: "欢迎光临",
+        dz:'مرحباً',
+        he:"ברוך הבא",
+        jp:"いらっしゃいませ",
+        kb:"Anṣuf yis-wen",
+        az:"ⴰⵏⵚⵓⴼ ⵢⵉⵙ ⵡⴻⵏ",
+        mq:"Bienveni"
         // Ajoutez autant de langues que nécessaire
       };
       

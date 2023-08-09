@@ -8,7 +8,8 @@ export default function Connexion() {
     return (
        
         <>
-  
+        <Header/>
+  <Main/>
      <Footer/>
      </>
     );
