@@ -489,13 +489,42 @@ height: 452px;
   border: 1px solid rgba(255,255,255,0.125);
   width: 1322px;
   height: 386px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.card_profil img {
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 1px 1px 6px 4px #605b5b85;
+  height: 300px;
+  width: 300px;
+}
+
+.card_profil p {
+  color: white;
+  font-size: 40px;
+  font-family: 'Inter';
+}
+
 .main_profil {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  height: 960px;
+
+}
+
+.main_profil h2{
+  color: #DACA3B;
+font-family: Gravitas One;
+font-size: 44px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
 }
 .filtre {
   width: 30%;
@@ -504,11 +533,104 @@ height: 452px;
   display: flex;
   justify-content: center;
 }
-.profil_content {
+.main_content {
   width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#20835D;
+  
+}
+.wall_card{
+  width: 920px;
+  height: 797px;
+  background: #D9D9D9;
+}
+.wall_content {
+    height: 570px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 0px 1px 6px grey;
+    align-items: center;
+}
+
+.wall_post{
+ width: 729px;
+ padding: 20px;
+height: auto;
+border-radius: 10px;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.wall_send{
+      display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  height: 227px;
+background: #20835D;
+}
+
+.wall_send input[type="text"] {
+    padding: 31px;
+    width: 535px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid;
+}
+.wall_send button {
+      border-radius: 100%;
+    height: 100px;
+    width: 100px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.col_gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* padding: 5px; */
+}
+.col_gallery img {
+    width: 401px;
+    height: 404px;
+    padding: 10px;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.video video {
+  width: 883px;
+height: 800px;
+object-fit: cover;
+}
+
+.card_music {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #20835D;
+  width: 968px;
+  height: 398px;
+  margin: 35px;
+}
+
+.header_card {width: 391px;
+  height: 398px;
+  background-color: yellow;
+}
+.main_card{
+  width: 577px;
+  height: 398px;
+  background-color: purple;
 }

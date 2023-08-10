@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import '../../appMobile.css'
 import { Link } from 'react-router-dom';
-
+import imgAvatar from '../../media/img/avatar.png';
 
 
 function openNav() {
@@ -26,6 +26,7 @@ export default function Header() {
                
                      {/*menu mobile*/ }
                 <span className='burgerMenu' onClick={openNav}>☰ </span>
+
                 <div id="myNav" className="overlay">
   <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>×</a>
   <div className="overlay-content">
@@ -39,12 +40,14 @@ export default function Header() {
         </nav>
         <div className='banniere'>
         <div className='card_profil'>
-        <div class="image-container">
-  <img id="img" src="https://picsum.photos/seed/picsum/200/300" height="300" width="300" />
-  <button id="editButton" class="hidden">Modifier l'image</button>
+       
+  <img id="img" src={imgAvatar} alt='avatar' />
+ <p>Nom</p>
+ <p>Prénom</p>
 </div>
+
         </div>
-        </div>
+        
 
         </header>
     );
