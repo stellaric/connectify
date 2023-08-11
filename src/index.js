@@ -10,6 +10,7 @@ import ErrorPage from './Routes/ErrorPage';
 import Connexion from './Connexion/Connexion.js'
 import Inscription from './Inscription/Inscription'
 import Profil from './Profil/Profil'
+import Contact from './Contact/Contact'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path:"profil",
     element:<Profil/>
+  },
+  {
+    path:"contact",
+    element:<Contact/>
   }
 ])
 

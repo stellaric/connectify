@@ -9,9 +9,19 @@ export default function Main(){
     <div className='main_profil'>
     <div className='filtre'>
         <div className='filtre_content'>
-            filtre
+           
+                <button>ALL</button>
+                <button>Wall</button>
+                <button>Gallery</button>
+                <button>Video</button>
+                <button>Music</button>
+
+         
         </div>
     </div>
+
+
+
 
     
     <div className='main_content'>
@@ -20,8 +30,16 @@ export default function Main(){
             <h2>My Walls</h2>
             <div className='wall_card'>
 <div className='wall_content'>
-    <div className='wall_post'><p></p>  </div>
-    <div className='wall_post'></div>
+    <div className='wall_post'>
+        <p> Le Rap US {'>>>'} Rap FR </p>
+        <div className='wall_post_footer'><p>8:30</p></div>
+      </div>
+    <div className='wall_post'>
+    <div className='wall_post_footer'>
+    <p> Le Rap US {'>>>'} Rap FR </p>
+        <p>8:30</p>
+        </div>
+    </div>
 </div>
 <div className='wall_send'>
 <input type="text" placeholder="Ecrivez un message..." />
@@ -52,12 +70,29 @@ export default function Main(){
         <section className='music'>
                 <h2>Music</h2>
                 <div className='card_music'>
-                    <div className="header_card">img</div>
-                    <div className="main_card">content</div>
+                    <div className="header_card"><img src="https://picsum.photos/200/300" alt="p4" /></div>
+                    <div className="main_card">
+                        <h3>RioGane -Down </h3>
+                        <div className="audio-container">
+            <audio id="audioPlay" controls autoPlay loop>
+            <source src="src/son/son_game2.mp3" type="audio/mp3" />
+       
+        </audio>
+        </div>
+                        </div>
                 </div>
                  <div className='card_music'>
-                    <div className="header_card">img</div>
-                    <div className="main_card">content</div>
+                    <div className="header_card"><img src="https://picsum.photos/200/300" alt="p4"/>
+                 </div>
+                    <div className="main_card">
+                    <h3>RioGane -Down </h3>
+                    <div className="audio-container">
+            <audio id="audioPlay" controls autoPlay loop>
+            <source src="src/son/son_game2.mp3" type="audio/mp3" />
+       
+        </audio>
+        </div>
+                    </div>
                 </div>
         </section>
         </div>

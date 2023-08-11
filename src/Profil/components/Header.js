@@ -32,7 +32,7 @@ export default function Header() {
   <div className="overlay-content">
   <h1 >Connectify</h1>
   <Link to={'/profil'}>Profil</Link>
-               <Link to={'../contact'}>Contact</Link>
+               <Link to={'/contact'}>Contact</Link>
                 <Link  to={'../connexion'}>Déconnexion</Link>
   
   </div>

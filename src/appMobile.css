@@ -207,4 +207,31 @@ display: none;
 .content_form_inscription label ,.content_form_connexion label {
     font-size: 20px;
 }
+
+/*profil*/
+.header_profil{
+    width: 390px;
+    height: 461px;
+}
+
+.card_profil{
+    width: 339px;
+height: 386px;
+}
+
+.card_profil img {
+    width: 169px;
+height: 159px;
+}
+.card_profil p {
+    font-size: 25px;
+}
+/*contact*/
+.contact_pg{
+    flex-direction: column;
+
+}
+.contact_pg > .droite h2{
+    font-size: 31px;
+}
 }
