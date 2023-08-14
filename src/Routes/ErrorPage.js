@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router-dom";
 import imgErreur from '../media/img/erreur_page.gif'
-import '../App.css';
+import '../styles/App.css';
 
 export default function ErrorPage() {
     const error = useRouteError()

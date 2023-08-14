@@ -1,8 +1,8 @@
 
-import '../../App.css';
-import '../../appMobile.css'
+import '../../../styles/App.css';
+import '../../../styles/appMobile.css'
 import React,{useState} from 'react';
-import imgContact from '../../media/img/fd_contact.jpg'
+import imgContact from '../../../media/img/fd_contact.jpg'
 
 
 

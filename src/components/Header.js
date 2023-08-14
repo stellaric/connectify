@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App.css';
-import '../appMobile.css'
+import '../styles/App.css';
+import '../styles/appMobile.css'
 import video from '../media/video/fd_accueil.mp4'
 import { Link } from 'react-router-dom'
 

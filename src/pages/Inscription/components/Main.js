@@ -1,10 +1,10 @@
 import React , {useContext, useRef,useState }from 'react';
 
-import {UserContext} from '../../context/userContext';
-import '../../App.css';
-import '../../appMobile.css'
+import {UserContext} from '../../../database/context/userContext';
+import '../../../styles/App.css';
+import '../../../styles/appMobile.css'
 import { Link } from 'react-router-dom';
-import imgInscription from '../../media/img/fd_inscription.jpg'
+import imgInscription from '../../../media/img/fd_inscription.jpg'
 
 
 export default function Main(){

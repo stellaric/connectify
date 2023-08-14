@@ -460,6 +460,8 @@ height: 452px;
   object-fit: cover;
 }
 
+
+
 /*vue profil*/
 .navbar_profil {
   display: flex;
@@ -471,7 +473,7 @@ height: 452px;
 }
 .header_profil {
   height: 650px;
-  background:url('media/img/banner_profil.png');
+  background:url('../media/img/banner_profil.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -622,8 +624,8 @@ background: #20835D;
     /* padding: 5px; */
 }
 .col_gallery img {
-    width: 401px;
-    height: 404px;
+    width: 350px;
+    height: 350px;
     padding: 10px;
     object-fit: cover;
 }
@@ -634,10 +636,12 @@ background: #20835D;
     justify-content: center;
     align-items: center;
 }
+
 .video video {
-  width: 883px;
-height: 800px;
-object-fit: cover;
+  width: 783px;
+  height: 600px;
+  object-fit: cover;
+  box-shadow: 2px 3px 10px grey;
 }
 
 .card_music {

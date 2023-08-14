@@ -136,14 +136,15 @@ display: none;
 
 .connexion > .gauche {
     width: 100%;
+    height: 311px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .connexion > .gauche img {
-    width: 390px;
-    height: 311px;
-    object-fit: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: left;
 }
 

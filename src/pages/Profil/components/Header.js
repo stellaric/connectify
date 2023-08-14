@@ -1,7 +1,8 @@
 import React from 'react';
-import '../../App.css';
-import '../../appMobile.css'
+import '../../../styles/App.css';
+import '../../../styles/appMobile.css'
 import { Link } from 'react-router-dom';
+import imgAvatar from '../../../media/img/avatar.png';
 
 
 function openNav() {
@@ -14,13 +15,13 @@ function openNav() {
 
 export default function Header() {
     return ( 
-     <header className='header_contact' >
-        <nav className="navbar_deux">
+     <header className="header_profil">
+        <nav className="navbar_profil">
             <h1 >Connectify</h1>
             <div className="onglets">
                <Link to={'/profil'}>Profil</Link>
                <Link to={'../contact'}>Contact</Link>
-                <Link  className="btn_inscription"to={'../connexion'}>Déconnexion</Link>
+                <Link  to={'../connexion'}>Déconnexion</Link>
 </div>
                
                      {/*menu mobile*/ }
@@ -31,13 +32,21 @@ export default function Header() {
   <div className="overlay-content">
   <h1 >Connectify</h1>
   <Link to={'/profil'}>Profil</Link>
-               <Link to={'../contact'}>Contact</Link>
+               <Link to={'/contact'}>Contact</Link>
                 <Link  to={'../connexion'}>Déconnexion</Link>
   
   </div>
             </div>
         </nav>
-    
+        <div className='banniere'>
+        <div className='card_profil'>
+       
+  <img id="img" src={imgAvatar} alt='avatar' />
+ <p>Nom</p>
+ <p>Prénom</p>
+</div>
+
+        </div>
         
 
         </header>

@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../App.css';
+import '../../../styles/App.css';
 import { Link } from 'react-router-dom';
-import imgConnexion from '../../media/img/fd_connexion.jpg'
-
+import imgConnexion from '../../../media/img/fd_connexion.jpg'
+import '../../../styles/appMobile.css';
 export default function Main(){
 
  

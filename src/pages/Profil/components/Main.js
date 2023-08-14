@@ -1,6 +1,9 @@
 import React from 'react';
-import '../../App.css';
-import videoProfil from '../../media/video/fd_accueil.mp4'
+import '../../../styles/App.css';
+import '../../../styles/appMobile.css';
+import videoProfil from '../../../media/video/video_profil.mp4'
+import imgAlbum from '../../../media/img/album-1.png'
+import imgAlbumBis from '../../../media/img/album-2.png'
 export default function Main(){
 
  
@@ -25,6 +28,7 @@ export default function Main(){
 
     
     <div className='main_content'>
+        
         <div className='all'>
         <section className='walls'>
             <h2>My Walls</h2>
@@ -70,7 +74,7 @@ export default function Main(){
         <section className='music'>
                 <h2>Music</h2>
                 <div className='card_music'>
-                    <div className="header_card"><img src="https://picsum.photos/200/300" alt="p4" /></div>
+                    <div className="header_card"><img src={imgAlbum} alt="p4" /></div>
                     <div className="main_card">
                         <h3>RioGane -Down </h3>
                         <div className="audio-container">
@@ -82,7 +86,7 @@ export default function Main(){
                         </div>
                 </div>
                  <div className='card_music'>
-                    <div className="header_card"><img src="https://picsum.photos/200/300" alt="p4"/>
+                    <div className="header_card"><img src={imgAlbumBis}alt="p4"/>
                  </div>
                     <div className="main_card">
                     <h3>RioGane -Down </h3>
