@@ -568,9 +568,16 @@ text-align: center;
   align-items: center;
   
 }
+.walls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .wall_card{
   width: 920px;
   height: 797px;
+  overflow: auto;
   background: #D9D9D9;
 }
 .wall_content {
@@ -585,10 +592,13 @@ text-align: center;
 .wall_post{
  width: 729px;
  padding: 20px;
+ margin: 20px;
 height: auto;
 border-radius: 10px;
 background: #FFF;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+display: flex;
+flex-direction: column-reverse;
 }
 .wall_send{
       display: flex;
@@ -596,6 +606,8 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     justify-content: center;
     align-items: center;
   height: 227px;
+  margin-bottom: 20px;
+  width: 920px;
 background: #20835D;
 }
 

@@ -215,21 +215,79 @@ display: none;
     height: 461px;
 }
 
+.banniere{
+    height: 368px;
+}
+
 .card_profil{
-    width: 339px;
-height: 386px;
+    width: 330px;
+height: 318px;
+flex-direction: column;
+justify-content: center;
 }
 
 .card_profil img {
-    width: 169px;
-height: 159px;
+    width: 160px;
+height: 150px;
 }
 .card_profil p {
     font-size: 25px;
 }
+
+.main_profil{
+    flex-direction: column;
+}
+.filtre{
+    width: 100%;
+}
+.filtre_content{
+    flex-direction: row;
+    height: 260px;
+}
+.filtre_content button {
+    width: 283px;
+    height: 115px;
+    font-size: 20px;
+}
+.main_content{
+    width: 100%;
+}
+.main_content h2 {
+    font-size: 35px;
+}
+
+.wall_card{
+    width: 365px;
+    height: 460px; 
+    overflow: auto;  
+}
+.wall_post{
+    width: auto;
+    margin: 10px;
+}
+.wall_post img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+.wall_send{
+    width: 365px;
+}
+.wall_send input[type="text"] {
+    padding: 20px;
+    width: 190px;
+   
+}
+
+
+.card_music{
+    flex-direction: column;
+}
 /*contact*/
 .contact_pg{
     flex-direction: column;
+
 
 }
 .contact_pg > .droite h2{
