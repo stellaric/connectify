@@ -11,7 +11,7 @@ export default function ErrorPage() {
 
         <div class="erreur_page">
             <h1>Page introuvable</h1>
-            <img src={imgErreur}/>
+            <img src={imgErreur} alt="image_erreur"/>
             <p>Une erreur est survenue !</p>
             
         </div>

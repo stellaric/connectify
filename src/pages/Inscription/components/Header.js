@@ -22,10 +22,12 @@ export default function Header() {
                 <Link className="btn_inscription" to={'../inscription'}>Inscription</Link>
             </div>
 
+
     {/*menu mobile*/ }
     <span className='burgerMenu' onClick={openNav}>☰ </span>
                 <div id="myNav" className="overlay">
-  <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>×</a>
+
+  <Link to="javascript:void(0)" className="closebtn" onClick={closeNav}>×</Link>
   <div className="overlay-content">
   <h1 >Connectify</h1>
   <Link to={'/'}>Accueil</Link>

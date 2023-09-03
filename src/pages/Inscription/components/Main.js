@@ -1,59 +1,71 @@
-import React , {useContext, useRef,useState }from 'react';
 
-import {UserContext} from '../../../database/context/userContext';
+import React, { useState ,useEffect} from 'react';
+
 import '../../../styles/App.css';
 import '../../../styles/appMobile.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 import imgInscription from '../../../media/img/fd_inscription.jpg'
 
 
 export default function Main(){
 
-    const { signUp } = useContext(UserContext);
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState('');
+  const [email, setEmail] = useState('');
+  const [genre, setGenre] = useState('homme'); // Par défaut, homme
+  const [motDePasse, setMotDePasse] = useState('');
+  const [verificationMotDePasse, setVerificationMotDePasse] = useState('');
+  const [erreurMotDePasse, setErreurMotDePasse] = useState('');
 
+  const handleGenreChange = (event) => {
+    setGenre(event.target.value);
+  };
 
-    const[validation , setValidation] = useState("");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    const inputs =useRef([])
-
-    const addInputs = el => {
-        if(el && !inputs.current.includes(el)){
-            inputs.current.push(el)
-        }
-
+    // Assurez-vous que les mots de passe correspondent
+    if (motDePasse !== verificationMotDePasse) {
+      setErreurMotDePasse('Les mots de passe ne correspondent pas');
+      return;
+    } else {
+      setErreurMotDePasse('');
     }
 
-    const formRef = useRef();
-
-    const handleForm = async (e) => {
-      e.preventDefault();
-    
-      if ((inputs.current[5].value.length || inputs.current[6].value.length) < 6) {
-        setValidation('6 characters min');
-        return;
-      } else if (inputs.current[5].value !== inputs.current[6].value) {
-        setValidation('Passwords do not match');
-        return;
-      }
-    
-      try {
-        const cred = await signUp(
-            inputs.current[1].value,
-             inputs.current[2].value);
-        formRef.current.reset(); // Réinitialiser le formulaire
-        setValidation('');
-        console.log(cred);
-      } catch (err) {
-        if(err.code === "auth/invalid-email") {
-            setValidation("Email format invalid")
-          }
-          
-          if(err.code === "auth/email-already-in-use") {
-            setValidation("Email already used")
-          }
-      }
+    // Envoyez les données au serveur pour l'inscription
+    const donneesInscription = {
+      nom,
+      prenom,
+      email,
+      genre,
+      motDePasse,
     };
-    
+
+
+  try {
+    const response = await fetch('/inscription', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(donneesInscription),
+    });
+
+    if (response.status === 200) {
+      // Inscription réussie, redirigez l'utilisateur vers la page de connexion
+      // Vous pouvez utiliser history.push pour rediriger ici si vous utilisez react-router-dom
+      console.log('Inscription réussie');
+    } else {
+      // Gérez les erreurs d'inscription ici
+      console.error('Échec de l\'inscription');
+    }
+  } catch (erreur) {
+    console.error('Erreur lors de l\'inscription :', erreur);
+  }
+};
+
+  
 
     return(
         <main>
@@ -66,55 +78,90 @@ export default function Main(){
                     </div>
                     <div className="droite_form">
                     <h2>Inscription</h2>
-                    <form ref={formRef} onSubmit={handleForm} >
 
+
+                  <form onSubmit={handleSubmit}>
         <div className="content_form_inscription">
-        <div className='content_name'>
-
+          <div className='content_name'>
             <div className='label_nom'>
-            <label htmlFor="nom">Nom:</label>
-            <input id="nom "type="text" placeholder='Entrez votre nom...'  ref={addInputs} required/>      
-</div>
-<div className="label_prenom">
-    
-            <label htmlFor="prenom">Prénom:</label>
-            <input id="prenom" type="text" placeholder='Entrez votre prénom...' ref={addInputs} required/>
+              <label htmlFor="nom">Nom:</label>
+              <input
+                id="nom"
+                type="text"
+                value={nom}
+                onChange={(e) => setNom(e.target.value)}
+                placeholder='Entrez votre nom...'
+                required
+              />
             </div>
-        </div>
-        <div className='label_email'>
+            <div className="label_prenom">
+              <label htmlFor="prenom">Prénom:</label>
+              <input
+                id="prenom"
+                type="text"
+                value={prenom}
+                onChange={(e) => setPrenom(e.target.value)}
+                placeholder='Entrez votre prénom...'
+                required
+              />
+            </div>
+          </div>
+          <div className='label_email'>
             <label htmlFor="email">Email:</label>
-            <input id="email" type="text" placeholder='Entrez votre email...'  ref={addInputs} required/>
-        </div>
-
-
-        <div className="label_genre">
-
-        <label htmlFor="genre">Genre:</label>
-       
-            <input type="radio"  name="genre" value="male" id='male' ref={addInputs} />
+            <input
+              id="email"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder='Entrez votre email...'
+              required
+            />
+          </div>
+          <div className="label_genre">
+            <label htmlFor="genre">Genre:</label>
+            <input
+              type="radio"
+              value="homme"
+              id='homme'
+              checked={genre === 'homme'}
+              onChange={handleGenreChange}
+            />
             <span name="homme">Homme</span>
-    
-            <input type="radio"  name="genre"  value="female" id='female' ref={addInputs} />
+            <input
+              type="radio"
+              value="femme"
+              id='femme'
+              checked={genre === 'femme'}
+              onChange={handleGenreChange}
+            />
             <span name="femme">Femme</span>
-           
+          </div>
+          <div className='label_mdp'>
+            <label htmlFor="mdp">Mot de passe :</label>
+            <input
+              id="mdp"
+              type="password"
+              placeholder='Entrez votre mot de passe ...'
+              value={motDePasse}
+              onChange={(e) => setMotDePasse(e.target.value)}
+              required
+            />
+          </div>
+          <div className='label_mdp'>
+            <label htmlFor="mdp_vf">Vérification de mot de passe :</label>
+            <input
+              id="mdp_vf"
+              type="password"
+              placeholder='Entrez votre mot de passe ...'
+              value={verificationMotDePasse}
+              onChange={(e) => setVerificationMotDePasse(e.target.value)}
+              required
+            />
+            {erreurMotDePasse && <span className="error-message">{erreurMotDePasse}</span>}
+          </div>
+          <button type='submit'>Valider</button>
         </div>
-
-
-
-
-        <div className='label_mdp'>
-        <label htmlFor="mdp">Mot de passe :</label>
-            <input id="mdp" type="password" placeholder='Entrez votre mot de passe ...' ref={addInputs}  required/>
-        </div>
-        <div className='label_mdp'>
-        <label htmlFor="mdp_vf">Vérification de mot de passe :</label>
-            <input  id="mdp_vf" type="password" placeholder='Entrez votre mot de passe ...' ref={addInputs}  required/>
-            <p>{validation}</p>
-        </div>
-
-        <button type='submit'>Valider </button>
-        </div>
-                   </form>
+      </form>
 
         <div className="link">
                    <p>Déja Inscrit ? </p> <Link to={'../connexion'}>Connectez-vous</Link>
