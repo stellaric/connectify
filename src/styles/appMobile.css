@@ -19,11 +19,13 @@
   }
 
   .navbar,
-  .navbar_deux {
+  .navbar_deux,
+  .navbar_profil {
     justify-content: center;
   }
   .navbar h1,
-  .navbar_deux h1 {
+  .navbar_deux h1,
+  .navbar_profil h1 {
     margin: 45px;
   }
 
@@ -267,7 +269,7 @@
 
   .wall_card {
     width: 365px;
-    height: 460px;
+    height: 360px;
     overflow: auto;
   }
   .wall_post {
@@ -287,6 +289,31 @@
     padding: 20px;
     width: 190px;
   }
+  textarea#newPostInput {
+    width: 250px;
+    height: 120px;
+}
+
+#newPostForm{
+  width: 350px;
+}
+.btn_wall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_download {
+  padding: 25px;
+  margin: 5px;
+}
+
+.wall_send button {
+  height: 80px;
+  width: 80px;
+}
+
 
   .col_gallery img {
     width: 180px;
@@ -294,6 +321,17 @@
     padding: 5px;
     object-fit: cover;
   }
+
+  .modal-img img {
+    width: 350px;
+    height: 350px;
+   
+}
+span.close {
+
+  right: 35px;
+ 
+}
 
   .video video {
     width: 332px;

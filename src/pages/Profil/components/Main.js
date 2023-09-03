@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth"; // Importez les fonctions Firebase nécessaires
+import { auth } from "../../../services/firebase"; // Assurez-vous que vous avez configuré Firebase correctement dans votre projet
 import "../../../styles/App.css";
 import "../../../styles/appMobile.css";
 import videoProfil from "../../../media/video/video_profil.mp4";
@@ -9,10 +12,36 @@ import gal2 from "../../../media/img/gal2.jpg";
 import gal3 from "../../../media/img/gal3.jpg";
 import gal4 from "../../../media/img/fd_qsn.jpg";
 import Modal from "./Modal"; // Assurez-vous d'importer le composant Modal
+import son1 from "../../../media/son/Down.mp3"
+import son2 from "../../../media/son/Wap.mp3"
 
 export default function Main() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const [activeTab, setActiveTab] = useState("all");
+  const [wallPosts, setWallPosts] = useState([]);
+  const [user, setUser] = useState(null); // Ajoutez cette ligne
+
+
+  useEffect(() => {
+    const auth = getAuth();
+
+    // Utilisez onAuthStateChanged pour écouter les changements d'état d'authentification
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // L'utilisateur est connecté
+        setUser(user);
+      } else {
+        // L'utilisateur n'est pas connecté, vous pouvez le rediriger ou gérer cela ici
+        setUser(null);
+      }
+    });
+
+    // Nettoyez l'écouteur lorsque le composant est démonté
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const openModal = (imgUrl) => {
     setSelectedImage(imgUrl);
@@ -24,8 +53,9 @@ export default function Main() {
     setModalOpen(false);
   };
 
-  const [activeTab, setActiveTab] = useState("all");
-  const [wallPosts, setWallPosts] = useState([]);
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
 
   const addPost = (e) => {
     e.preventDefault();
@@ -39,15 +69,22 @@ export default function Main() {
         : null;
 
     if (postContent.trim() !== "" || imageURL !== null) {
-      setWallPosts([...wallPosts, { content: postContent, image: imageURL }]);
+      // Obtenez l'heure actuelle au moment de la publication
+      const now = new Date();
+      const heurePublication = `${now.getHours()}:${now.getMinutes()}`;
+
+      // Créez le nouveau post avec l'heure de publication
+      const newPost = { content: postContent, image: imageURL, heurePublication };
+
+      // Ajoutez le post à la liste des posts
+      setWallPosts([...wallPosts, newPost]);
+
       newPostInput.value = "";
       imageInput.value = null;
     }
   };
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
+
   return (
     <main>
       <div className="main_profil">
@@ -86,6 +123,7 @@ export default function Main() {
           </div>
         </div>
 
+        {user ? (
         <div className="main_content">
           <div className="all">
             {(activeTab === "all" || activeTab === "walls") && (
@@ -93,13 +131,18 @@ export default function Main() {
                 <h2>My Walls</h2>
 
                 <div id="wallPosts" className="wall_card">
-                  {wallPosts.map((post, index) => (
-                    <div key={index} className="wall_post">
-                      {post.content}
-                      {post.image && <img src={post.image} alt="Post" />}
-                    </div>
-                  ))}
-                </div>
+        {wallPosts.map((post, index) => (
+          <div key={index} className="wall_post">
+           
+         
+            {post.image && <img src={post.image} alt="Post" />}
+            <p>{post.content}</p>
+            <div className="heure">
+            <p>{post.heurePublication}</p>
+          </div>
+          </div>
+        ))}
+      </div>
 
                 <div className="wall_send">
                   <form id="newPostForm" onSubmit={addPost}>
@@ -107,15 +150,16 @@ export default function Main() {
                       <textarea
                         id="newPostInput"
                         placeholder="Ecrivez un message..."
-                        rows="4"
-                        cols="50"
+                      
                       ></textarea>
                     </div>
 
                     <div className="btn_wall">
             {/* Utilisez le bouton personnalisé */}
-        <label htmlFor="imageInput" className="custom-file-upload">
-        <iconify-icon icon="line-md:arrow-close-down" style={{ color: "white" }} width="80" height="80" />
+        <label htmlFor="imageInput" className="btn_download">
+                   
+        <iconify-icon icon="line-md:arrow-close-down" style={{ color: "white" }} width="30" height="30" />
+       
         </label>
         {/* Cachez l'élément d'entrée de type fichier */}
         <input
@@ -125,7 +169,7 @@ export default function Main() {
           style={{ display: 'none' }}
         />
                       <button type="submit">
-                        <iconify-icon icon="line-md:download-outline" />
+                      <iconify-icon icon="teenyicons:send-solid" style={{ color: "white" }} width="30" height="30" />
                       </button>
                     </div>
                   </form>
@@ -183,10 +227,10 @@ export default function Main() {
                     <img src={imgAlbum} alt="p4" />
                   </div>
                   <div className="main_card">
-                    <h3>RioGane -Down </h3>
+                    <h3>RioGane - Down </h3>
                     <div className="audio-container">
-                      <audio id="audioPlay" controls autoPlay loop>
-                        <source src="src/son/son_game2.mp3" type="audio/mp3" />
+                      <audio id="audioPlay" controls >
+                        <source src={son1} type="audio/mp3" />
                       </audio>
                     </div>
                   </div>
@@ -196,10 +240,10 @@ export default function Main() {
                     <img src={imgAlbumBis} alt="p4" />
                   </div>
                   <div className="main_card">
-                    <h3>RioGane -Down </h3>
+                    <h3>Grange - WAP </h3>
                     <div className="audio-container">
-                      <audio id="audioPlay" controls autoPlay loop>
-                        <source src="src/son/son_game2.mp3" type="audio/mp3" />
+                      <audio id="audioPlay" controls >
+                      <source src={son2} type="audio/mp3" />
                       </audio>
                     </div>
                   </div>
@@ -208,6 +252,10 @@ export default function Main() {
             )}
           </div>
         </div>
+         ) : (
+          <p>Vous devez vous connecter pour voir le contenu.</p>
+          
+        )}
         {modalOpen && <Modal imgUrl={selectedImage} onClose={closeModal} />}
       </div>
     </main>
