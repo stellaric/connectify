@@ -18,7 +18,7 @@ app.use(session({
 }));
 
 // Connexion à la base de données MongoDB
-mongoose.connect('mongodb+srv://test:azerty@dbconnectify.odiosgv.mongodb.net/your-database-name', {
+mongoose.connect('changer les donnes', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
